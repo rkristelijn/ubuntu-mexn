@@ -44,3 +44,45 @@ sudo apt-get install -y nodejs
 # Visual Studio Code
 
 From Ubuntu Software Center
+
+# Git
+
+```bash
+
+sudo apt update
+
+sudo apt install git
+
+```
+
+Configure git:
+
+## Generate SSH key
+
+[reference](https://help.github.com/en/articles/connecting-to-github-with-ssh)
+
+```bash
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_rsa
+
+```
+
+## Add SSH key to github account
+
+[reference](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account)
+
+```bash
+
+sudo apt-get install xclip
+
+xclip -sel clip < ~/.ssh/id_rsa.pub
+
+```
+
+Go to [https://github.com/settings/keys](https://github.com/settings/keys) and add the key
+
+Now you can do git clone, push, pull without using a password every time
